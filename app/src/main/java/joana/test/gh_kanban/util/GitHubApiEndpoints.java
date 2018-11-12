@@ -2,6 +2,7 @@ package joana.test.gh_kanban.util;
 
 import java.util.List;
 
+import joana.test.gh_kanban.model.Issue;
 import joana.test.gh_kanban.model.Repo;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -17,6 +18,7 @@ public interface GitHubApiEndpoints {
     Call<List<Repo>> getReposByUser(@Path("user") String user);
 
     //https://api.github.com/repos/googlesamples/android-AccelerometerPlay/issues
+    //Default returns state=open
     @GET("repos/{owner}/{repo}/issues")
-    Call<List<Repo>> getRepoIssues(@Path("owner") String owner, @Path("repo") String repo);
+    Call<List<Issue>> getRepoIssues(@Path("owner") String owner, @Path("repo") String repo);
 }

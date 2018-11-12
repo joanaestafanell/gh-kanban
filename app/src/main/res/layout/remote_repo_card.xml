@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="joana.test.gh_kanban.viewmodel.ExploreViewModel"/>
+        <variable
+            name="repo"
+            type="joana.test.gh_kanban.model.Repo" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/repo_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        android:onClick="@{()->viewmodel.createKanban(repo)}">
+
+        <LinearLayout
+            android:id="@+id/repo_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/repo_name"
+                style="@style/CustomText.bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{repo.name}" />
+
+            <TextView
+                android:id="@+id/repo_author"
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{repo.owner.login}" />
+
+            <TextView
+                android:id="@+id/title_btn"
+                style="@style/CustomText.card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:gravity="center_vertical"
+                android:text="@string/btn_create_kanban"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+</layout>

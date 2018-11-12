@@ -13,9 +13,9 @@ import joana.test.gh_kanban.R;
 import joana.test.gh_kanban.view.account.AccountFragment;
 import joana.test.gh_kanban.view.explore.ExploreFragment;
 import joana.test.gh_kanban.view.local.LocalFragment;
+import joana.test.gh_kanban.viewmodel.ExploreViewModel;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationViewListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_explore:
                     loadFragment(ExploreFragment.newInstance(), ExploreFragment.TAG, false);
                     return true;
+
                 case R.id.nav_local:
                     loadFragment(LocalFragment.newInstance(), LocalFragment.TAG, false);
                     return true;
@@ -51,6 +52,5 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationViewListener);
 
         loadFragment(ExploreFragment.newInstance(), ExploreFragment.TAG, false);
-
     }
 }

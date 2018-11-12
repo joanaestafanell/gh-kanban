@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">GH Kanban</string>
     <string name="title_explore">Explore</string>
-    <string name="title_local">Local</string>
+    <string name="title_local">Kanban</string>
     <string name="title_account">Account</string>
     <string name="fragment_explore">This fragment will display a RecyclerView listing as cards all public projects of a user. I\'ll be using retofit and data binding.</string>
     <string name="fragment_local">This fragment will display a RecyclerView listing as cards all local projects. Using room and data binding.\n\nWhen clicking on a card, a new Activity will be opened, containing 4 tabs: Backlog, Next, Doing and Done. Each tab will display the correspondig persisted issues with Room.</string>
     <string name="fragment_account">This fragment would enable user\'s account management</string>
+    <string name="btn_create_kanban">Create Kanban</string>
 
 </resources>

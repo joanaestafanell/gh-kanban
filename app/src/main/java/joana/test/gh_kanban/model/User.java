@@ -1,14 +1,9 @@
 package joana.test.gh_kanban.model;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * POJO class to hold GitHub API call fields and provide getters and setters
- */
-
-public class Owner {
+public class User {
 
     @SerializedName("login")
     @Expose

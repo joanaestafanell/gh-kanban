@@ -61,7 +61,15 @@ public class MainActivityTest {
     @Test
     public void testRemoteRepoClickedAndLocalRepoIsCreatedAndDisplayed(){
         ExploreFragment exploreFragment = (ExploreFragment) mMainActivity.getSupportFragmentManager().findFragmentByTag(ExploreFragment.TAG);
-
+        //IdlingRegistry.getInstance().register(exploreFragment.countingIdleResources)
+        /*
+         val homeFragment=mDashboardActivity.supportFragmentManager.findFragmentByTag(HomeFragment.TAG) as HomeFragment
+        IdlingRegistry.getInstance().register(homeFragment.countingIdleResources)
+        onView(withId(R.id.rvMovies)).perform(RecyclerViewActions.actionOnItemAtPosition<HomeAdapter.HomeViewHolder>(0, click()))
+        assertNotNull(mDashboardActivity.supportFragmentManager.findFragmentByTag(VideoPlayerFragment.TAG))
+        assertNotNull(mDashboardActivity.supportFragmentManager.findFragmentByTag(VideoDetailsFragment.TAG))
+        IdlingRegistry.getInstance().unregister(homeFragment.countingIdleResources)
+         */
     }
 
     private void testBottomCliks(int menuId){
