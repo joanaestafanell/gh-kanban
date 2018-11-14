@@ -10,6 +10,7 @@ This is a sample app demonstrating GitHub API data consuming using Retrofit. All
     - Basic Unit tests and Integration tests implemented
 
 ## Future Improvements
+    - Improve backstack navigation
     - Explore menu:
         - Implement pagination and endless scroll RecyclerView when loading remote data.
         - Disable projects that already have a kanban board.
