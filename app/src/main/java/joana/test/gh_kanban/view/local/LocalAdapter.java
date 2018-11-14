@@ -47,7 +47,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
         return mBoardList.size();
     }
 
-
     class LocalViewHolder extends RecyclerView.ViewHolder{
         private final ViewDataBinding binding;
 
