@@ -6,6 +6,10 @@
     <string name="fragment_explore">This fragment will display a RecyclerView listing as cards all public projects of a user. I\'ll be using retofit and data binding.</string>
     <string name="fragment_local">This fragment will display a RecyclerView listing as cards all local projects. Using room and data binding.\n\nWhen clicking on a card, a new Activity will be opened, containing 4 tabs: Backlog, Next, Doing and Done. Each tab will display the correspondig persisted issues with Room.</string>
     <string name="fragment_account">This fragment would enable user\'s account management</string>
+    <string name="msg_no_issues">There are no issues to display</string>
     <string name="btn_create_kanban">Create Kanban</string>
-
+    <string name="btn_view_kanban">Open board</string>
+    <string name="btn_move_left">Move left</string>
+    <string name="btn_move_right">Move right</string>
+    <string name="title_activity_kanban">Kanban board</string>
 </resources>

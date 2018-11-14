@@ -1,7 +1,6 @@
 package joana.test.gh_kanban.view.explore;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,7 +16,7 @@ import android.widget.ProgressBar;
 import java.util.List;
 
 import joana.test.gh_kanban.R;
-import joana.test.gh_kanban.model.Repo;
+import joana.test.gh_kanban.model.remote.Repo;
 import joana.test.gh_kanban.viewmodel.ExploreViewModel;
 
 /**
@@ -75,11 +74,12 @@ public class ExploreFragment extends Fragment {
             @Override
             public void onChanged(@Nullable List<Repo> repoList) {
                 mProgressBar.setVisibility(View.GONE);
-                mAdapter.setRepoList(repoList);
+                if(repoList != null)
+                    mAdapter.setRepoList(repoList);
             }
         });
+
         return view;
     }
-
 
 }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.lang.Integer" />
+
+        <import type="android.view.View" />
+
+        <import type="joana.test.gh_kanban.util.Constants" />
+
+        <variable
+            name="viewmodel"
+            type="joana.test.gh_kanban.viewmodel.KanbanViewModel" />
+
+        <variable
+            name="issue"
+            type="joana.test.gh_kanban.model.local.BoardIssue" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/board_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:id="@+id/issue_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/issue_title"
+                style="@style/CustomText.bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical"
+                android:text="@{issue.title}" />
+
+            <TextView
+                android:id="@+id/issue_date"
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@id/issue_title"
+                android:gravity="center_vertical"
+                android:text="@{issue.createdAt}" />
+
+            <Button
+                android:id="@+id/left_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/issue_date"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/btn_move_left"
+                android:textColor="@color/colorAccent"
+                android:onClick="@{()->viewmodel.onClickMoveLeft(issue)}"
+                android:visibility="@{Constants.KanbanState.BACKLOG.name().equalsIgnoreCase(issue.kanbanState) ? View.GONE : View.VISIBLE}" />
+
+            <Button
+                android:id="@+id/right_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/issue_date"
+                android:layout_toEndOf="@id/left_btn"
+                android:layout_toRightOf="@id/left_btn"
+                android:onClick="@{()->viewmodel.onClickMoveRight(issue)}"
+                android:paddingTop="12dp"
+                android:text="@string/btn_move_right"
+                android:textColor="@color/colorAccent"
+                android:visibility="@{Constants.KanbanState.DONE.name().equalsIgnoreCase(issue.kanbanState) ? View.GONE : View.VISIBLE}" />
+
+            <ImageView
+                android:id="@+id/comments_image"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/issue_date"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toStartOf="@id/comments"
+                android:layout_toLeftOf="@id/comments"
+                android:gravity="center_horizontal"
+                android:paddingTop="12dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/text_color"
+                app:srcCompat="@drawable/ic_chat_bubble_black_24dp" />
+
+            <TextView
+                android:id="@+id/comments"
+                style="@style/CustomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/issue_date"
+                android:layout_alignBottom="@id/comments_image"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:minWidth="25dp"
+                android:paddingTop="12dp"
+                android:text="@{String.valueOf(issue.comments)}" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

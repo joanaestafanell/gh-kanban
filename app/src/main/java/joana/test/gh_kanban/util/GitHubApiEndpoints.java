@@ -2,8 +2,8 @@ package joana.test.gh_kanban.util;
 
 import java.util.List;
 
-import joana.test.gh_kanban.model.Issue;
-import joana.test.gh_kanban.model.Repo;
+import joana.test.gh_kanban.model.remote.Issue;
+import joana.test.gh_kanban.model.remote.Repo;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

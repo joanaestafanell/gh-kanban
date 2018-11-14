@@ -1,4 +1,4 @@
-package joana.test.gh_kanban.model;
+package joana.test.gh_kanban.model.remote;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

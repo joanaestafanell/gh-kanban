@@ -34,20 +34,12 @@ public class MainActivityTest {
     }
 
     @Test
-    public void testMainActivityLaubchedAndExploreFragmentAttached(){
+    public void testMainActivityLaunchedAndExploreFragmentAttached(){
         assertNotNull(mMainActivity);
         assertNotNull(mMainActivity.findViewById(R.id.container));
 
         ExploreFragment exploreFragment = (ExploreFragment) mMainActivity.getSupportFragmentManager().findFragmentByTag(ExploreFragment.TAG);
         assertNotNull(exploreFragment);
-        //        // Start statistics screen.
-//        onView(withId(R.id.nav_view))
-//                .perform(navigateTo(R.id.statistics_navigation_menu_item));
-//
-//        // Check that statistics Activity was opened.
-//        String expectedNoStatisticsText = InstrumentationRegistry.getTargetContext()
-//                .getString(R.string.no_statistics_available);
-//        onView(withId(R.id.no_statistics)).check(matches(withText(expectedNoStatisticsText)));
     }
 
     @Test
@@ -61,15 +53,6 @@ public class MainActivityTest {
     @Test
     public void testRemoteRepoClickedAndLocalRepoIsCreatedAndDisplayed(){
         ExploreFragment exploreFragment = (ExploreFragment) mMainActivity.getSupportFragmentManager().findFragmentByTag(ExploreFragment.TAG);
-        //IdlingRegistry.getInstance().register(exploreFragment.countingIdleResources)
-        /*
-         val homeFragment=mDashboardActivity.supportFragmentManager.findFragmentByTag(HomeFragment.TAG) as HomeFragment
-        IdlingRegistry.getInstance().register(homeFragment.countingIdleResources)
-        onView(withId(R.id.rvMovies)).perform(RecyclerViewActions.actionOnItemAtPosition<HomeAdapter.HomeViewHolder>(0, click()))
-        assertNotNull(mDashboardActivity.supportFragmentManager.findFragmentByTag(VideoPlayerFragment.TAG))
-        assertNotNull(mDashboardActivity.supportFragmentManager.findFragmentByTag(VideoDetailsFragment.TAG))
-        IdlingRegistry.getInstance().unregister(homeFragment.countingIdleResources)
-         */
     }
 
     private void testBottomCliks(int menuId){
