@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigation.setSelectedItemId(R.id.nav_local);
             }
         });
+
         mLocalViewModel = ViewModelProviders.of(this).get(LocalViewModel.class);
         mLocalViewModel.getSelectedBoard().observe(this, new Observer<Board>() {
             @Override
